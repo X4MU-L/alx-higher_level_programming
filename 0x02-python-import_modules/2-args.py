@@ -6,9 +6,9 @@ if __name__ == "__main__":
     if length == 0:
         print('0 arguments.')
     elif length == 1:
-        print('1 argument')
+        print('1 argument:')
     else:
-        print(f'{length:d} arguments')
+        print(f'{length:d} arguments:')
 
     for i in range(length):
         print(f'{i + 1}: {sys.argv[i + 1]}')
