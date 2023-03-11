@@ -10,7 +10,5 @@ if __name__ == "__main__":
     else:
         print(f'{length:d} arguments')
 
-    for i, arg in enumerate(sys.argv):
-        if i == 0:
-            continue
-        print(f'{i}: {arg}')
+    for i in range(length):
+        print(f'{i + 1}: {sys.argv[i + 1]}')
