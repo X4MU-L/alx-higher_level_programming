@@ -18,7 +18,7 @@ if __name__ == "__main__":
     b = int(sys.argv[3])
     try:
         idx = operators.index(operator)
-        print(f'{a:d} {operator} {b:d} = {functions[idx](a, b)}')
+        print(f'{a} {operator} {b} = {functions[idx](a, b)}')
     except:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
