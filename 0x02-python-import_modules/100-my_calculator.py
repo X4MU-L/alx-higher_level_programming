@@ -11,7 +11,7 @@ if __name__ == "__main__":
     operator = sys.argv[2]
 
     if arg_len < 3:
-        sys.stderr.write("Usage: ./100-my_calculator.py <a> <operator> <b>\n")
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
 
     a = int(sys.argv[1])
@@ -20,6 +20,5 @@ if __name__ == "__main__":
         idx = operators.index(operator)
         print(f'{a:d} {operator} {b:d} = {functions[idx](a, b)}')
     except:
-        sys.stderr.write("Unknown operator. "
-                         "Available operators: +, -, * and /\n")
+        print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
