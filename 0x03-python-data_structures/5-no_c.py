@@ -7,3 +7,4 @@ def no_c(my_string):
             if c not in "cC":
                 new_str += c
         return new_str
+    return my_string
