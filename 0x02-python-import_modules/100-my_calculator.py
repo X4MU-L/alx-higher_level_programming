@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 
 if __name__ == "__main__":
-    """Perform a calculator operation according to operator passed to command"""
+    """Perform a calculator operation according to
+    operator passed to command"""
     import sys
     from calculator_1 import add, sub, mul, div
 
-    operators = ["*","+","/","-"]
+    operators = ["*", "+", "/", "-"]
     functions = [mul, add, div, sub]
     arg_len = len(sys.argv) - 1
 
@@ -18,6 +19,6 @@ if __name__ == "__main__":
     try:
         idx = operators.index(sys.argv[2])
         print(f'{a} {sys.argv[2]} {b} = {functions[idx](a, b)}')
-    except:
+    except ValueError:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
