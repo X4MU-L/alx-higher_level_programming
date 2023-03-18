@@ -4,7 +4,7 @@ def roman_to_int(roman_string):
     if isinstance(roman_string, str) and roman_string:
         roman = {"I": 1, "V": 5, "X": 10, "L": 50,
                  "C": 100, "D": 500, "M": 1000}
-        tens = ["X", "V"]
+        tens = ["X", "V", "D", "C"]
         for i in range(len(roman_string)):
             if roman_string[i] in tens and roman_string[i - 1] == "I":
                 num -= 2
