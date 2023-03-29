@@ -5,7 +5,10 @@ class Square:
     """Square is a python class with a private size attribute"""
     def __init__(self, size):
         """Initializes the square objects
-        called on class instanciation"""
+        called on class instanciation
+        Args:
+            size (int): the size of the new square
+        """
         self.__size = size
 
     def __str__(self):

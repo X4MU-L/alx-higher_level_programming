@@ -6,7 +6,10 @@ class Square:
 
     def __init__(self, size=0):
         """Initializes the square objects
-        called on class instanciation"""
+        called on class instanciation
+        Args:
+            size (int): the size of the new square
+        """
 
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
