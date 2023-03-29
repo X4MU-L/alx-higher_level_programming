@@ -76,12 +76,3 @@ class Square:
             [print(" ", end="") for j in range(0, self.position[0])]
             [print("#", end="") for k in range(0, self.size)]
             print("")
-
-
-my_square = Square(5, (0, 0))
-print(my_square)
-
-print("--")
-
-my_square = Square(5, (4, 1))
-print(my_square)
