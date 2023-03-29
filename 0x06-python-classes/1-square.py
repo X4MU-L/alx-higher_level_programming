@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
 """This Module contains a python class Square"""
+
+
 class Square:
     """Square is a python class with a private size attribute"""
     def __init__(self, size):
