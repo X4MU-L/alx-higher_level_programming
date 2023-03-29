@@ -18,15 +18,19 @@ class Square:
 
     def __str__(self):
         """Print the square with the # character."""
+        str_ = ""
         if self.__size == 0:
-            print("")
-            return
+            return ("\n")
 
-        [print("") for i in range(0, self.position[1])]
+        for i in range(0, self.position[1]):
+            str_ += "\n"
         for i in range(0, self.__size):
-            [print(" ", end="") for j in range(0, self.position[0])]
-            [print("#", end="") for k in range(0, self.size)]
-            print("")
+            for j in range(0, self.position[0]):
+                str_ += " "
+            for k in range(0, self.size):
+                str_ += "#"
+            str_ += "\n"
+        return (str_)
 
     @property
     def size(self):
@@ -72,3 +76,12 @@ class Square:
             [print(" ", end="") for j in range(0, self.position[0])]
             [print("#", end="") for k in range(0, self.size)]
             print("")
+
+
+my_square = Square(5, (0, 0))
+print(my_square)
+
+print("--")
+
+my_square = Square(5, (4, 1))
+print(my_square)
