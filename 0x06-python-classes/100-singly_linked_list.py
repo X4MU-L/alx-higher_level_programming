@@ -1,4 +1,4 @@
-#!/usr/nin/python3
+#!/usr/bin/python3
 
 """Build a Singly linked list from a Node class"""
 
