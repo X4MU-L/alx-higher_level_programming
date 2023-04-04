@@ -1,0 +1,46 @@
+The ``test for text_indentation`` module
+===================================
+
+import ``text_indentation`` from ``5-text_indentation`` module
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("""         """)
+
+>>> text_indentation("hello: how are you?.")
+hello:
+<BLANKLINE>
+how are you?
+<BLANKLINE>
+.
+<BLANKLINE>
+
+>>> text_indentation("hello: how are you? i'm good, you")
+hello:
+<BLANKLINE>
+how are you?
+<BLANKLINE>
+i'm good, you
+
+
+>>> text_indentation("poop")
+poop
+
+>>> text_indentation("") is None
+True
+
+>>> text_indentation("                  big    ")
+big    
+
+``Errors``
+
+>>> text_indentation([])
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(3)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
