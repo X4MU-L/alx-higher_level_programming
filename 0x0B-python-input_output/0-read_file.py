@@ -2,6 +2,7 @@
 
 """Read File Module"""
 
+
 def read_file(filename=""):
     """Read and prints all the content of file
        args:
