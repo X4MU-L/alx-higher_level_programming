@@ -5,6 +5,9 @@ import ``MyList`` class from ``1-my_list`` module
 
 >>> MyList = __import__('1-my_list').MyList
 >>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+
 >>> my_list += [1, 2, 3]
 
 >>> my_list
@@ -15,8 +18,10 @@ import ``MyList`` class from ``1-my_list`` module
 >>> my_list.print_sorted()
 [-1, 0, 1, 2, 3, 5, 6, 80]
 
+>>> my_list.append(10)
+>>> my_list.append(-50)
 >>> my_list
-[1, 2, 3, 5, 0, 80, -1, 6]
+[1, 2, 3, 5, 0, 80, -1, 6, 10, -50]
 >>> my_list += [1, "55", "hello", 200]
 >>> my_list.print_sorted()
 Traceback (most recent call last):

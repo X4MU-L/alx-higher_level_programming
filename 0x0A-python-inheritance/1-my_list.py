@@ -2,7 +2,6 @@
 """Create a MyList class that inherits from a list"""
 
 
-
 class MyList(list):
     """A class for new list that inherits list class"""
 
