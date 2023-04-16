@@ -8,4 +8,4 @@ def is_kind_of_class(obj, a_class):
            obj: (instance of a class) object to check
            a_class: (a class)
     """
-    return (isinstance(obj, a_class)
+    return (isinstance(obj, a_class))
