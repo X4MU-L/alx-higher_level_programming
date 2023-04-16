@@ -59,7 +59,7 @@ if __name__ == "__main__":
             try:
                 if logs.get("size", -1) == -1:
                     logs["size"] = 0
-                    logs["size"] += int(line[-2])
+                    logs["size"] += int(line[-1])
                 else:
                     logs["size"] += int(line[-1])
             except (IndexError, ValueError):
