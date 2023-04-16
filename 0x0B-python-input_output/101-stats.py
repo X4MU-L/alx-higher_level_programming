@@ -5,7 +5,6 @@ prints the following statistics:
     - Total file size up to that point.
     - Count of read status codes up to that point.
 """
-import json
 
 
 def print_logs(logs):
@@ -75,7 +74,7 @@ if __name__ == "__main__":
                 pass
 
         print_logs(logs)
-    save_to_json_file(logs, "logs.json")
+        save_to_json_file(logs, "logs.json")
     except KeyboardInterrupt:
         save_to_json_file(logs, "logs.json")
         print_logs(logs)
