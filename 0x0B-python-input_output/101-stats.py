@@ -1,9 +1,6 @@
 #!/usr/bin/python3
 """Read from stdin metrics of get request and create mapping of
-   status codes sent and also file size
-   usage:<IP Address> [<date>] "GET /projects/260 HTTP/1.1" <status code>
-   <file size>
-"""
+   status codes sent and also file size"""
 
 
 import json
