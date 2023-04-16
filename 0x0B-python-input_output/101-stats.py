@@ -75,8 +75,8 @@ if __name__ == "__main__":
                 pass
 
         print_logs(logs)
-        save_to_json_file(logs, "logs.json")
+        save_to_json_file({"size": 0}, "logs.json")
     except KeyboardInterrupt:
-        save_to_json_file(logs, "logs.json")
+        save_to_json_file({"size": 0}, "logs.json")
         print_logs(logs)
         raise
