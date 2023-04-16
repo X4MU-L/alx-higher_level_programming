@@ -1,6 +1,10 @@
 #!/usr/bin/python3
-"""Read from stdin metrics of get request and create mapping of
-   status codes sent and also file size"""
+"""
+After every ten lines or the input of a keyboard interruption (CTRL + C),
+prints the following statistics:
+    - Total file size up to that point.
+    - Count of read status codes up to that point.
+"""
 
 
 import json
