@@ -21,6 +21,12 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def __str__(self):
+        """return a string representation of Rectangle attribute infos"""
+        return ("[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
+                                                 self.id, self.x, self.y,
+                                                 self.width, self.height))
+
     @property
     def width(self):
         """Get/set the width property"""
