@@ -119,7 +119,6 @@ class Rectangle(Base):
                 elif idx == 4:
                     self.y = arg
                 idx += 1
-                
 
         elif kwargs and len(kwargs) != 0:
             for key, value in kwargs.items():
