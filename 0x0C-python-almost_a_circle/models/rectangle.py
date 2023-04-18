@@ -91,7 +91,7 @@ class Rectangle(Base):
             [print("#", end="" if k + 1 != self.__width else "\n")
              for k in range(self.__width)]
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Update the Rectangle.
         Args:
             *args (ints): New attribute values.
@@ -100,6 +100,7 @@ class Rectangle(Base):
                 - 3rd argument represent height attribute
                 - 4th argument represents x attribute
                 - 5th argument represents y attribute
+            **kwargs dict: key/value pairs of attributes
         """
         if args and len(args) != 0:
             idx = 0
@@ -119,3 +120,19 @@ class Rectangle(Base):
                     self.y = arg
                 idx += 1
                 
+
+        elif kwargs and len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    if value is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
