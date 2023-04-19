@@ -41,8 +41,8 @@ class Base:
         if list_objs is None:
             with open("{}.json".format(cls.__name__), "w",
                       encoding="UTF-8") as f:
-                f.write(json.dumps([]))
+                f.write(cls.to_json_string(None))
         else:
             with open("{}.json".format(cls.__name__), "w",
                       encoding="UTF-8") as f:
-                f.write(json.dumps([obj.to_dictionary() for obj in list_objs]))
+                f.write(cls.to_json_string([obj.to_dictionary() for obj in list_objs]))
