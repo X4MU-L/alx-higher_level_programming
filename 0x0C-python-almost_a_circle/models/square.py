@@ -23,20 +23,17 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        """Get/set the width property"""
+        """Get/set the width/height property"""
         return self.width
 
     @size.setter
     def size(self, value):
-        if type(value) != int:
-            raise TypeError("width must be an integer")
-        if value < 1:
-            raise ValueError("width must be > 0")
         self.width = value
         self.height = value
 
     def update(self, *args, **kwargs):
-        """Updates the attributes using a variable length of args
+        """
+        Update the attributes using a variable length of args
         Args:
             *args (ints): New attribute values.
                 - 1st argument represents id attribute
@@ -45,7 +42,6 @@ class Square(Rectangle):
                 - 4th argument represents y attribute
             **kwargs dict: key/value pairs of attributes
         """
-
         if args and len(args) != 0:
             i = 0
             for arg in args:
@@ -61,7 +57,6 @@ class Square(Rectangle):
                 elif i = 3:
                     self.y = arg
                 i += 1
-
         elif kwargs and len(kwargs) != 0:
             for key, value in kwargs.items():
                 if key == "id":
