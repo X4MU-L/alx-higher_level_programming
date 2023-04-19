@@ -44,7 +44,7 @@ class Square(Rectangle):
                 4th argument should be the y attribute
            **kwargs: ony when args is not availble use the keywards to update
         """
-        if args && len(args) != 0:
+        if args and len(args) != 0:
             i = 0
             for arg in args:
                 if i = 0:
