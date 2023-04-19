@@ -34,3 +34,42 @@ class Square(Rectangle):
             raise ValueError("width must be > 0")
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """Updates the attributes using a variable length of args
+           *args:
+                1st argument should be the id attribute
+                2nd argument should be the size attribute
+                3rd argument should be the x attribute
+                4th argument should be the y attribute
+           **kwargs: ony when args is not availble use the keywards to update
+        """
+        if args && len(args) != 0:
+            i = 0
+            for arg in args:
+                if i = 0:
+                    if arg is None:
+                        self.__init__(self.size, self.size, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif i = 1:
+                    self.size = arg
+                elif i = 2:
+                    self.x = arg
+                elif i = 3:
+                    self.y = arg
+                i += 1
+
+        elif kwargs and len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    if value is None:
+                        self.__init__(self.size, self.size, self.x, self.y)
+                    else:
+                        self.id = value
+                elif key == "size":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
