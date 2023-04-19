@@ -41,9 +41,19 @@ class Base:
         if list_objs is None:
             with open("{}.json".format(cls.__name__), "w",
                       encoding="UTF-8") as f:
-                f.write(cls.to_json_string(None))
+                f.write("[]")
         else:
             with open("{}.json".format(cls.__name__), "w",
                       encoding="UTF-8") as f:
                 f.write(cls.to_json_string([obj.to_dictionary()
                                             for obj in list_objs]))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns a list representation of a json string
+        args:
+            json_string: a json string from which to return a json
+        """
+        if json_string is None or json_string == []:
+            return []
+        return json.loads(json_string)
