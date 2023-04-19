@@ -37,7 +37,7 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """Updates the attributes using a variable length of args
-           Args:
+        Args:
             *args (ints): New attribute values.
                 - 1st argument represents id attribute
                 - 2nd argument represent size attribute
