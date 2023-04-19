@@ -45,4 +45,5 @@ class Base:
         else:
             with open("{}.json".format(cls.__name__), "w",
                       encoding="UTF-8") as f:
-                f.write(cls.to_json_string([obj.to_dictionary() for obj in list_objs]))
+                f.write(cls.to_json_string([obj.to_dictionary()
+                                            for obj in list_objs]))
