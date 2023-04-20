@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Create a Base Module"""
 import json
+import csv
 
 
 class Base:
@@ -85,3 +86,37 @@ class Base:
             return list_objs
         list_objs = cls.from_json_string(list_objs)
         return ([cls.create(**obj) for obj in list_objs])
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """save a list of object dicts to a csv file
+        Args:
+            list_objs: list of class object dicts
+        """
+        filename = "{}.csv".format(cls.__name__)
+        if cls.__name__ == "Rectangle":
+            fieldnames = ["id", "width", "height", "x", "y"]
+        else:
+            fieldnames = ["id", "size", "x", "y"]
+        with open(filename, "w", newline="") as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            writer.writerows([obj.to_dictionary() for obj in list_objs])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """load a list of class object dicts from a file and create
+        instances of class with the list and a list of instances
+        """
+        filename = "{}.csv".format(cls.__name__)
+        if cls.__name__ == "Rectangle":
+            fieldnames = ["id", "width", "height", "x", "y"]
+        else:
+            fieldnames = ["id", "size", "x", "y"]
+        try:
+            with open(filename, newline="") as csvfile:
+                list_objs = csv.DictReader(csvfile, fieldnames=fieldnames)
+                list_objs = [{k: int(v) for k, v in obj.items()}
+                             for obj in list_objs]
+                return [cls.create(**obj) for obj in list_objs]
+        except FileNotFoundError:
+            return []
