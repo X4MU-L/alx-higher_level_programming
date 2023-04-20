@@ -70,3 +70,18 @@ class Base:
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """return a list of cls intances using a json object loaded
+        from a file <Class name>.json - example: Rectangle.json
+        """
+        filename = "{}.json".format(cls.__name__)
+        list_objs = []
+        try:
+            with open(filename, encoding="UTF-8") as f:
+                list_objs = f.read()
+        except FileNotFoundError:
+            return list_objs
+        list_objs = cls.from_json_string(list_objs)
+        return ([cls.create(**obj) for obj in list_objs])
