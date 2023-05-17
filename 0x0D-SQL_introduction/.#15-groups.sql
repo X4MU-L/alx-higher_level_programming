@@ -1,1 +1,0 @@
-samuel@samuel-Aspire-A315-54.16959:1684265657
