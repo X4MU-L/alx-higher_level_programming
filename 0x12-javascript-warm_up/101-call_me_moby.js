@@ -2,7 +2,8 @@
 // create a function that adds two integers
 
 exports.callMeMoby = (num, func) => {
-    while (num--) {
+    while (num > 0) {
 	func();
+	num--;
     }
 };
