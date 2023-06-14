@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// prints x times “C is fun" where x is from line args
+// prints x square  x is from line args
 
 const arg = process.argv.slice(2, 3).join();
 
