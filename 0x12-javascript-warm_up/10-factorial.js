@@ -10,7 +10,7 @@ function factorial (num) {
   return (num * factorial(num - 1));
 }
 
-if (Number.isNaN(Number(arg))) {
+if (Number.isNaN(Number(arg)) || arg === '') {
   console.log(1);
 } else {
   console.log(factorial(Number(parseInt(arg))));
