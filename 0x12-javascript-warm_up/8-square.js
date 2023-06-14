@@ -9,7 +9,7 @@ if (!arg || Number.isNaN(Number(arg))) {
   for (let i = Number(parseInt(arg)); i > 0; i--) {
     let x = '';
     for (let j = Number(parseInt(arg)); j > 0; j--) {
-      x += 'x';
+      x += 'X';
     }
     console.log(x);
   }
