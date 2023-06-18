@@ -14,10 +14,10 @@ if __name__ == "__main__":
     except Exception as e:
         if type(e) == IndexError:
             print(f"USAGE: {argv[0]} user passwd database state")
-
-        print(e)
+        else:
+            print(e)
         exit(1)
     cur = db.cursor()
-    cur.execute("SELECT * from states WHERE name=%s", (argv[4],))
+    cur.execute(f"SELECT * from states WHERE name='{argv[4]}';")
     [print(row) for row in cur.fetchall()]
     db.close()
