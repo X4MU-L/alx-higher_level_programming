@@ -11,6 +11,7 @@ if __name__ == "__main__":
                              passwd=argv[2],
                              db=argv[3]
                              )
+        state_name = argv[4]
     except Exception as e:
         if type(e) == IndexError:
             print(f"USAGE: {argv[0]} user passwd database state")
@@ -19,6 +20,6 @@ if __name__ == "__main__":
         exit(1)
     cur = db.cursor()
     cur.execute("SELECT * from states WHERE name='{}' ORDER BY id;".format(
-        argv[4]))
+        state_name))
     [print(row) for row in cur.fetchall()]
     db.close()
