@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
         print(e)
         exit(1)
-    cur = db.cursor();
+    cur = db.cursor()
     cur.execute("SELECT * from states;")
     [print(row) for row in cur.fetchall()]
     db.close()
