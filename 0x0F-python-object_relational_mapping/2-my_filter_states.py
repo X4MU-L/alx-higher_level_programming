@@ -18,6 +18,6 @@ if __name__ == "__main__":
             print(e)
         exit(1)
     cur = db.cursor()
-    cur.execute(f"SELECT * from states WHERE name='{argv[4]}';")
+    cur.execute("SELECT * from states WHERE name='{}';".format(argv[4]))
     [print(row) for row in cur.fetchall()]
     db.close()
