@@ -9,7 +9,6 @@ if __name__ == "__main__":
                              port=3306,
                              user=argv[1],
                              passwd=argv[2],
-                             port=3306,
                              db=argv[3]
                              )
     except Exception as e:
@@ -19,6 +18,7 @@ if __name__ == "__main__":
         print(e)
         exit(1)
     cur = db.cursor()
-    cur.execute("SELECT * from states WHERE name LIKE 'N%';")
+    cur.execute("SELECT * from states WHERE name LIKE 'N%' \
+    ORDER BY states.id;")
     [print(row) for row in cur.fetchall()]
     db.close()
