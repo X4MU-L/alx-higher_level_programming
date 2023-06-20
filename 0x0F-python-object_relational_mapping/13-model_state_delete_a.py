@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""query a database using sqlalchemy
-   get all state names count passed to command
-"""
+"""query a database using sqlalchemy and delete a record"""
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sys import argv
@@ -18,12 +16,11 @@ if __name__ == "__main__":
         Session = sessionmaker(bind=engine)
         session = Session()
 
-        state = session.query(State).filter(State.id == 2).one_or_none()
-        if state:
-            state.name = "New Mexico"
-            session.add(state)
-            session.commit()
+        states = session.query(State).filter(State.name.like('%a%')).all()
+        if states:
+            [session.delete(state) for state in states]
 
+        session.commit()
         session.close()
     except Exception as e:
         if type(e) == IndexError:
