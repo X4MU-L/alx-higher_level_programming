@@ -27,7 +27,7 @@ if __name__ == "__main__":
             session.close()
     except Exception as e:
         if type(e) == IndexError:
-            print(f"USAGE: {argv[0]} user passwd database state_name")
+            print(f"USAGE: {argv[0]} user passwd database")
         else:
             print(e)
         exit(1)
