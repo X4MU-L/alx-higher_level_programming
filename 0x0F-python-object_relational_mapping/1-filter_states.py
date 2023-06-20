@@ -19,7 +19,8 @@ if __name__ == "__main__":
             print(e)
         exit(1)
     cur = db.cursor()
-    cur.execute("SELECT * from states WHERE name LIKE 'N%' \
-    ORDER BY id;")
+    cur.execute("SELECT * from states \
+                WHERE name LIKE 'N%' \
+                ORDER BY id;")
     [print(row) for row in cur.fetchall()]
-    db.close()
+    cur.close()
