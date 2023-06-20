@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
         for states, cities in session.query(State, City).filter(
                 State.id == City.state_id).order_by(City.id).all():
-            print(f"{states.name}: {cities.id} {cities.name}")
+            print(f"{states.name}: ({cities.id}) {cities.name}")
 
         session.close()
     except Exception as e:
