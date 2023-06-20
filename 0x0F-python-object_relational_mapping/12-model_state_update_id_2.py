@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
         state = session.query(State).filter(State.id == 2).one_or_none()
         if state:
-            state.name = "New Mexico";
+            state.name = "New Mexico"
             session.add(state)
             session.commit()
 
