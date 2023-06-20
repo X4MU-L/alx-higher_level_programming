@@ -15,7 +15,8 @@ if __name__ == "__main__":
         if type(e) == IndexError:
             print(f"USAGE: {argv[0]} user passwd database")
 
-        print(e)
+        else:
+            print(e)
         exit(1)
     cur = db.cursor()
     cur.execute("SELECT * from states WHERE name LIKE 'N%' \
