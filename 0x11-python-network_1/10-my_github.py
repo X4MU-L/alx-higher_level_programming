@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    Authenticated into github Api using basic authentication 
+    Authenticated into github Api using basic authentication
     and retrieve user id.
     USAGE: ./10-my_github.py <username> <password>
 """
