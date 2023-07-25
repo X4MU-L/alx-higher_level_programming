@@ -6,10 +6,11 @@ request.get(url, (err, res, body) => {
   const obj = {};
   const todos = JSON.parse(body);
   for (const todo of todos) {
-    if (obj[todo['userId']] && todo['completed']) {
-      obj[todo['userId']]++;
-    } else if (!obj[todo['userId']] && todo['completed']) {
-      obj[todo['userId']] = 1;
+    if (obj[todo.userId] && todo.completed) {
+      obj[todo.userId]++;
+    } else if (!obj[todo.userId] && todo.completed) {
+      obj[todo.userId] = 1;
     }
   }
+  console.log(obj);
 });
