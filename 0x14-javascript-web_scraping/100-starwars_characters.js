@@ -6,7 +6,9 @@ request.get(url, (err, res, body) => {
     const characters = JSON.parse(body).characters;
     characters.forEach((character) => {
       request.get(character, (err, res, body) => {
-        console.log(JSON.parse(body).name);
+        if (!err) {
+          console.log(JSON.parse(body).name);
+        }
       });
     });
   }
