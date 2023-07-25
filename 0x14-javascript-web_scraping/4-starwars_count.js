@@ -1,14 +1,18 @@
 #!/usr/bin/node
 const request = require('request');
-url = `${process.argv[2]}`;
-person = 'https://swapi-api.alx-tools.com/api/people/18/';
+const url = `${process.argv[2]}`;
+const person = 'https://swapi-api.alx-tools.com/api/people/18/';
 request.get(url, (err, res, body) => {
-  let results = JSON.parse(body).results;
-  num = 0;
-  for (let film of results) {
-    if (film.charaters.find(usr === url)) {
-      num++;
+  if (!err) {
+    const results = JSON.parse(body).results;
+    let num = 0;
+    for (const film of results) {
+      if (film.characters.find((usr) => usr === person)) {
+        num++;
+      }
     }
+    console.log(num);
+  } else {
+    console.log(err);
   }
-  console.log(num);
 });
