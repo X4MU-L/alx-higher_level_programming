@@ -11,5 +11,7 @@ request.get(url, (err, res, body) => {
       }
     }
     console.log(num);
+    return;
   }
+  console.log(0);
 });
